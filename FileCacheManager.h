@@ -5,15 +5,26 @@
 #ifndef EX4_FILECACHEMANAGER_H
 #define EX4_FILECACHEMANAGER_H
 using namespace std;
-
-#include <string>
 #include "CacheManager.h"
+#include <list>
+#include <unordered_map>
+#include <string>
+#include <fstream>
+#include <algorithm>
+#include <functional>
+#include <iostream>
+#include <functional>
 
 class FileCacheManager : public CacheManager {
 protected:
+    hash<string> hashFunc;
+    unordered_map<string, pair<string , list<string>::iterator>> cache;
+    list<string> lruKeys;
     int capacity;
 
 public:
+    string updateLRU(string key);
+
     FileCacheManager(int capacity);
 
     bool isSolutionExist(string problem);

@@ -64,9 +64,9 @@ string CacheMfrom2<T>::updateLRU(string key) {
  * @param obj T - the object that we want to insert.
  */
 template<typename T>
-void CacheMfrom2<T>::insert(string key, T obj, string name_of_file) {
+void CacheMfrom2<T>::insert(string key, T obj) {
     list<string>::iterator it;
-    pair <T, list<string>::iterator> pair;
+    pair<T, list<string>::iterator> pair;
     string oldKey;
     //If that key is already in the cache
     if (this->cache.count(key) == 1) {
@@ -79,7 +79,7 @@ void CacheMfrom2<T>::insert(string key, T obj, string name_of_file) {
     } else {
         this->lruKeys.push_front(key);
     }
-    fstream file(obj.class_name + key, ios::out | ios::binary);
+    fstream file (obj.class_name + key, ios::out | ios::binary);
     if (!file) {
         cerr << "Error in file creating" << endl;
     }
@@ -87,7 +87,7 @@ void CacheMfrom2<T>::insert(string key, T obj, string name_of_file) {
     pair.first = obj;
     pair.second = it;
     this->cache[key] = pair;
-    file.write((name_of_file, sizeof(obj)));
+    file.write((char*)&obj, sizeof(obj));
     file.close();
 }
 
