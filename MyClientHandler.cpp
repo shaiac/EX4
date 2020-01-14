@@ -16,8 +16,14 @@ MyClientHandler::MyClientHandler() {
 void MyClientHandler::handleClient(int client_socket) {
     int valread;
     char buffer[1024] = {0};
+    string solution;
     valread = read(client_socket, buffer, 1024);
-    const string solution = this->solver->solve(buffer);
+    if (!this->cacheManager->isSolutionExist(buffer)) {
+        solution = this->solver->solve(buffer);
+        this->cacheManager->saveSolution(buffer, solution);
+    } else {
+        solution = this->cacheManager->getSolution(buffer);
+    }
     int return_val;
     //= send(client_socket,solution,solution.length(), 0);
     send(client_socket, solution.c_str(), solution.length(), 0);

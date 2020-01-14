@@ -6,7 +6,7 @@
 int main() {
     MyClientHandler *mch = new MyClientHandler();
     MySerialServer *mss = new MySerialServer();
-    mss->open(7760, mch);
+    mss->open(7767, mch);
 
     return 0;
 }

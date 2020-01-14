@@ -4,11 +4,12 @@
 
 #ifndef EX4_CACHEMANAGER_H
 #define EX4_CACHEMANAGER_H
+#include <string>
 
 class CacheManager {
 public:
     virtual bool isSolutionExist(string problem) = 0;
-    virtual char * getSolution(string problem) = 0;
+    virtual string getSolution(string problem) = 0;
     virtual void saveSolution(string problem, string solution) = 0;
 };
 

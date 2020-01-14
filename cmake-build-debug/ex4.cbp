@@ -87,12 +87,6 @@
 		<Unit filename="/home/shaiac/CLionProjects/ex4/CacheManager.h">
 			<Option target="ex4"/>
 		</Unit>
-		<Unit filename="/home/shaiac/CLionProjects/ex4/CacheMfrom2.cpp">
-			<Option target="ex4"/>
-		</Unit>
-		<Unit filename="/home/shaiac/CLionProjects/ex4/CacheMfrom2.h">
-			<Option target="ex4"/>
-		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/ClientHandler.h">
 			<Option target="ex4"/>
 		</Unit>

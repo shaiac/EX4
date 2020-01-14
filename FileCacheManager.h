@@ -29,7 +29,7 @@ public:
 
     bool isSolutionExist(string problem);
 
-    char * getSolution(string problem);
+    string getSolution(string problem);
 
     void saveSolution(string problem, string solution);
 

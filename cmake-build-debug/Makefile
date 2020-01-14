@@ -123,33 +123,6 @@ ex4/fast:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/build
 .PHONY : ex4/fast
 
-CacheMfrom2.o: CacheMfrom2.cpp.o
-
-.PHONY : CacheMfrom2.o
-
-# target to build an object file
-CacheMfrom2.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/CacheMfrom2.cpp.o
-.PHONY : CacheMfrom2.cpp.o
-
-CacheMfrom2.i: CacheMfrom2.cpp.i
-
-.PHONY : CacheMfrom2.i
-
-# target to preprocess a source file
-CacheMfrom2.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/CacheMfrom2.cpp.i
-.PHONY : CacheMfrom2.cpp.i
-
-CacheMfrom2.s: CacheMfrom2.cpp.s
-
-.PHONY : CacheMfrom2.s
-
-# target to generate assembly for a file
-CacheMfrom2.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/CacheMfrom2.cpp.s
-.PHONY : CacheMfrom2.cpp.s
-
 FileCacheManager.o: FileCacheManager.cpp.o
 
 .PHONY : FileCacheManager.o
@@ -294,9 +267,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex4"
 	@echo "... edit_cache"
-	@echo "... CacheMfrom2.o"
-	@echo "... CacheMfrom2.i"
-	@echo "... CacheMfrom2.s"
 	@echo "... FileCacheManager.o"
 	@echo "... FileCacheManager.i"
 	@echo "... FileCacheManager.s"

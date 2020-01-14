@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/ex4.dir/main.cpp.o CMakeFiles/ex4.dir/SerialServer.cpp.o CMakeFiles/ex4.dir/StringReverser.cpp.o CMakeFiles/ex4.dir/MyClientHandler.cpp.o CMakeFiles/ex4.dir/FileCacheManager.cpp.o CMakeFiles/ex4.dir/CacheMfrom2.cpp.o  -o ex4 
+/usr/bin/c++  -g   CMakeFiles/ex4.dir/main.cpp.o CMakeFiles/ex4.dir/SerialServer.cpp.o CMakeFiles/ex4.dir/StringReverser.cpp.o CMakeFiles/ex4.dir/MyClientHandler.cpp.o CMakeFiles/ex4.dir/FileCacheManager.cpp.o  -o ex4 
