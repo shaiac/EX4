@@ -123,6 +123,60 @@ ex4/fast:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/build
 .PHONY : ex4/fast
 
+CacheMfrom2.o: CacheMfrom2.cpp.o
+
+.PHONY : CacheMfrom2.o
+
+# target to build an object file
+CacheMfrom2.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/CacheMfrom2.cpp.o
+.PHONY : CacheMfrom2.cpp.o
+
+CacheMfrom2.i: CacheMfrom2.cpp.i
+
+.PHONY : CacheMfrom2.i
+
+# target to preprocess a source file
+CacheMfrom2.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/CacheMfrom2.cpp.i
+.PHONY : CacheMfrom2.cpp.i
+
+CacheMfrom2.s: CacheMfrom2.cpp.s
+
+.PHONY : CacheMfrom2.s
+
+# target to generate assembly for a file
+CacheMfrom2.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/CacheMfrom2.cpp.s
+.PHONY : CacheMfrom2.cpp.s
+
+FileCacheManager.o: FileCacheManager.cpp.o
+
+.PHONY : FileCacheManager.o
+
+# target to build an object file
+FileCacheManager.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/FileCacheManager.cpp.o
+.PHONY : FileCacheManager.cpp.o
+
+FileCacheManager.i: FileCacheManager.cpp.i
+
+.PHONY : FileCacheManager.i
+
+# target to preprocess a source file
+FileCacheManager.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/FileCacheManager.cpp.i
+.PHONY : FileCacheManager.cpp.i
+
+FileCacheManager.s: FileCacheManager.cpp.s
+
+.PHONY : FileCacheManager.s
+
+# target to generate assembly for a file
+FileCacheManager.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/FileCacheManager.cpp.s
+.PHONY : FileCacheManager.cpp.s
+
 MyClientHandler.o: MyClientHandler.cpp.o
 
 .PHONY : MyClientHandler.o
@@ -240,6 +294,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex4"
 	@echo "... edit_cache"
+	@echo "... CacheMfrom2.o"
+	@echo "... CacheMfrom2.i"
+	@echo "... CacheMfrom2.s"
+	@echo "... FileCacheManager.o"
+	@echo "... FileCacheManager.i"
+	@echo "... FileCacheManager.s"
 	@echo "... MyClientHandler.o"
 	@echo "... MyClientHandler.i"
 	@echo "... MyClientHandler.s"

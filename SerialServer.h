@@ -5,7 +5,6 @@
 #ifndef EX4_SERIALSERVER_H
 #define EX4_SERIALSERVER_H
 using namespace std;
-
 #include <netinet/in.h>
 #include "server_side.h"
 

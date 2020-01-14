@@ -1,11 +1,11 @@
 //
-// Created by shaiac on 13/01/2020.
+// Created by shaiac on 14/01/2020.
 //
 
 #ifndef EX4_CLIENTHANDLER_H
 #define EX4_CLIENTHANDLER_H
 using namespace std;
-#include "server_side.h"
+
 #include <iostream>
 
 class ClientHandler {

@@ -23,7 +23,7 @@ void MySerialServer:: start(int socketfd, sockaddr_in address, ClientHandler *cl
         }
         clientH->handleClient(client_socket);
     }
-    close(client_socket);
+    close(socketfd);
 }
 
 void MySerialServer:: open(int port, ClientHandler *clientH) {

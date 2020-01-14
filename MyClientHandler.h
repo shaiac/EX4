@@ -8,12 +8,14 @@
 #include "ClientHandler.h"
 #include "CacheManager.h"
 #include "Solver.h"
+#include "StringReverser.h"
 
 class MyClientHandler : public ClientHandler{
 protected:
-    CacheManager<string, string> *cacheManager;
-    Solver<string, string > *solver;
+    CacheManager*cacheManager;
+    StringReverser *solver;
 public:
+     MyClientHandler();
     void handleClient(int client_socket);
 };
 

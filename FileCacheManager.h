@@ -8,19 +8,20 @@ using namespace std;
 
 #include <string>
 #include "CacheManager.h"
-template<typename P, typename S>
-class FileCacheManager : public CacheManager<P , S> {
+
+class FileCacheManager : public CacheManager {
 protected:
     int capacity;
+
 public:
     FileCacheManager(int capacity);
-    bool isSolutionExist(P problem);
-    string getSolution(P problem);
-    void saveSolution(P problem, S solution);
-};
 
-template<typename P, typename S> FileCacheManager<P,S> ::FileCacheManager(int capacity) {
-    this->capacity = capacity;
-}
+    bool isSolutionExist(string problem);
+
+    char * getSolution(string problem);
+
+    void saveSolution(string problem, string solution);
+
+};
 
 #endif //EX4_FILECACHEMANAGER_H
