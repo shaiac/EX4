@@ -84,16 +84,40 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/CacheManager.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/ClientHandler.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/FileCacheManager.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/MyClientHandler.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/MyClientHandler.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/SerialServer.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/SerialServer.h">
 			<Option target="ex4"/>
 		</Unit>
-		<Unit filename="/home/shaiac/CLionProjects/ex4/Server.h">
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Solver.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/StringReverser.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/StringReverser.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/main.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/server_side.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/CMakeLists.txt">
