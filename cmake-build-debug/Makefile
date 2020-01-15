@@ -123,6 +123,33 @@ ex4/fast:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/build
 .PHONY : ex4/fast
 
+DepthFirstSearch.o: DepthFirstSearch.cpp.o
+
+.PHONY : DepthFirstSearch.o
+
+# target to build an object file
+DepthFirstSearch.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o
+.PHONY : DepthFirstSearch.cpp.o
+
+DepthFirstSearch.i: DepthFirstSearch.cpp.i
+
+.PHONY : DepthFirstSearch.i
+
+# target to preprocess a source file
+DepthFirstSearch.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/DepthFirstSearch.cpp.i
+.PHONY : DepthFirstSearch.cpp.i
+
+DepthFirstSearch.s: DepthFirstSearch.cpp.s
+
+.PHONY : DepthFirstSearch.s
+
+# target to generate assembly for a file
+DepthFirstSearch.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/DepthFirstSearch.cpp.s
+.PHONY : DepthFirstSearch.cpp.s
+
 FileCacheManager.o: FileCacheManager.cpp.o
 
 .PHONY : FileCacheManager.o
@@ -150,6 +177,33 @@ FileCacheManager.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/FileCacheManager.cpp.s
 .PHONY : FileCacheManager.cpp.s
 
+Matrix.o: Matrix.cpp.o
+
+.PHONY : Matrix.o
+
+# target to build an object file
+Matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Matrix.cpp.o
+.PHONY : Matrix.cpp.o
+
+Matrix.i: Matrix.cpp.i
+
+.PHONY : Matrix.i
+
+# target to preprocess a source file
+Matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
+
+Matrix.s: Matrix.cpp.s
+
+.PHONY : Matrix.s
+
+# target to generate assembly for a file
+Matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
+
 MyClientHandler.o: MyClientHandler.cpp.o
 
 .PHONY : MyClientHandler.o
@@ -176,6 +230,33 @@ MyClientHandler.s: MyClientHandler.cpp.s
 MyClientHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyClientHandler.cpp.s
 .PHONY : MyClientHandler.cpp.s
+
+Point.o: Point.cpp.o
+
+.PHONY : Point.o
+
+# target to build an object file
+Point.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Point.cpp.o
+.PHONY : Point.cpp.o
+
+Point.i: Point.cpp.i
+
+.PHONY : Point.i
+
+# target to preprocess a source file
+Point.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Point.cpp.i
+.PHONY : Point.cpp.i
+
+Point.s: Point.cpp.s
+
+.PHONY : Point.s
+
+# target to generate assembly for a file
+Point.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/Point.cpp.s
+.PHONY : Point.cpp.s
 
 SerialServer.o: SerialServer.cpp.o
 
@@ -267,12 +348,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex4"
 	@echo "... edit_cache"
+	@echo "... DepthFirstSearch.o"
+	@echo "... DepthFirstSearch.i"
+	@echo "... DepthFirstSearch.s"
 	@echo "... FileCacheManager.o"
 	@echo "... FileCacheManager.i"
 	@echo "... FileCacheManager.s"
+	@echo "... Matrix.o"
+	@echo "... Matrix.i"
+	@echo "... Matrix.s"
 	@echo "... MyClientHandler.o"
 	@echo "... MyClientHandler.i"
 	@echo "... MyClientHandler.s"
+	@echo "... Point.o"
+	@echo "... Point.i"
+	@echo "... Point.s"
 	@echo "... SerialServer.o"
 	@echo "... SerialServer.i"
 	@echo "... SerialServer.s"

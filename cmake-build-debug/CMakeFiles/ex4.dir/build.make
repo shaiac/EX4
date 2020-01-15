@@ -122,13 +122,55 @@ CMakeFiles/ex4.dir/FileCacheManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/FileCacheManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/FileCacheManager.cpp -o CMakeFiles/ex4.dir/FileCacheManager.cpp.s
 
+CMakeFiles/ex4.dir/Point.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/Point.cpp.o: ../Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ex4.dir/Point.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/Point.cpp.o -c /home/shaiac/CLionProjects/ex4/Point.cpp
+
+CMakeFiles/ex4.dir/Point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/Point.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaiac/CLionProjects/ex4/Point.cpp > CMakeFiles/ex4.dir/Point.cpp.i
+
+CMakeFiles/ex4.dir/Point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/Point.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/Point.cpp -o CMakeFiles/ex4.dir/Point.cpp.s
+
+CMakeFiles/ex4.dir/Matrix.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/Matrix.cpp.o: ../Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ex4.dir/Matrix.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/Matrix.cpp.o -c /home/shaiac/CLionProjects/ex4/Matrix.cpp
+
+CMakeFiles/ex4.dir/Matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/Matrix.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaiac/CLionProjects/ex4/Matrix.cpp > CMakeFiles/ex4.dir/Matrix.cpp.i
+
+CMakeFiles/ex4.dir/Matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/Matrix.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/Matrix.cpp -o CMakeFiles/ex4.dir/Matrix.cpp.s
+
+CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o: ../DepthFirstSearch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o -c /home/shaiac/CLionProjects/ex4/DepthFirstSearch.cpp
+
+CMakeFiles/ex4.dir/DepthFirstSearch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/DepthFirstSearch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaiac/CLionProjects/ex4/DepthFirstSearch.cpp > CMakeFiles/ex4.dir/DepthFirstSearch.cpp.i
+
+CMakeFiles/ex4.dir/DepthFirstSearch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/DepthFirstSearch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/DepthFirstSearch.cpp -o CMakeFiles/ex4.dir/DepthFirstSearch.cpp.s
+
 # Object files for target ex4
 ex4_OBJECTS = \
 "CMakeFiles/ex4.dir/main.cpp.o" \
 "CMakeFiles/ex4.dir/SerialServer.cpp.o" \
 "CMakeFiles/ex4.dir/StringReverser.cpp.o" \
 "CMakeFiles/ex4.dir/MyClientHandler.cpp.o" \
-"CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
+"CMakeFiles/ex4.dir/FileCacheManager.cpp.o" \
+"CMakeFiles/ex4.dir/Point.cpp.o" \
+"CMakeFiles/ex4.dir/Matrix.cpp.o" \
+"CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o"
 
 # External object files for target ex4
 ex4_EXTERNAL_OBJECTS =
@@ -138,9 +180,12 @@ ex4: CMakeFiles/ex4.dir/SerialServer.cpp.o
 ex4: CMakeFiles/ex4.dir/StringReverser.cpp.o
 ex4: CMakeFiles/ex4.dir/MyClientHandler.cpp.o
 ex4: CMakeFiles/ex4.dir/FileCacheManager.cpp.o
+ex4: CMakeFiles/ex4.dir/Point.cpp.o
+ex4: CMakeFiles/ex4.dir/Matrix.cpp.o
+ex4: CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o
 ex4: CMakeFiles/ex4.dir/build.make
 ex4: CMakeFiles/ex4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ex4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ex4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

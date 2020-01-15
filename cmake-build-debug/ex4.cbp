@@ -90,16 +90,40 @@
 		<Unit filename="/home/shaiac/CLionProjects/ex4/ClientHandler.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/DepthFirstSearch.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/DepthFirstSearch.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/FileCacheManager.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/FileCacheManager.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Matrix.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Matrix.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/MyClientHandler.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/MyClientHandler.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Point.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Point.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Searchable.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Searcher.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/SerialServer.cpp">
@@ -109,6 +133,9 @@
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/Solver.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/State.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/StringReverser.cpp">

@@ -31,7 +31,10 @@ string FileCacheManager::getSolution(string problem) {
         this->lruKeys.push_front(problem);
         return this->cache[problem].first;
     } else {
-        fstream file(to_string(hashFunc(problem)));
+        string file_name = to_string(hashFunc(problem));
+        file_name += ".txt";
+        fstream file;
+        file.open(file_name, fstream::in);
         if (!file) {
             cerr << "Error in file creating, key doesn't exist" << endl;
         }
