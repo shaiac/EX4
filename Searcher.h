@@ -7,9 +7,9 @@
 
 #include "Searchable.h"
 
-template<typename T>
+template<typename T, typename S>
 class Searcher {
-    virtual string Search(Searchable<T> searchable)=0;
+    virtual S Search(Searchable<T> *searchable) = 0;
 };
 
 

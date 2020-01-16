@@ -1,18 +1,21 @@
 //
-// Created by shaiac on 14/01/2020.
+// Created by shaiac on 16/01/2020.
 //
 
-#ifndef EX4_DEPTHFIRSTSEARCH_H
-#define EX4_DEPTHFIRSTSEARCH_H
+#ifndef EX4_BREADTHFIRSTSEARCH_H
+#define EX4_BREADTHFIRSTSEARCH_H
+
 
 #include "Searcher.h"
 #include <stack>
 #include <list>
+#include <queue>
+#include <iostream>
 
 using namespace std;
 
 template<typename T>
-class DepthFirstSearch : public Searcher<T, vector<State<T> *>> {
+class BreadthFirstSearch {
 public:
     bool IsInList(list<State<T> *> checklist, State<T> *check) {
         for (auto itr = checklist.begin(); itr != checklist.end(); itr++) {
@@ -39,15 +42,17 @@ public:
 
     vector<State<T> *> Search(Searchable<T> *searchable) {
         list<State<T> *> search_in_past;
-        stack<State<T> *> to_search;
+        queue<State<T> *> to_search;
         State<T> *check;
         to_search.push(searchable->getInitialState());
+        int x = 0;
         while (!to_search.empty()) {
-            check = to_search.top();
+            check = to_search.front();
             to_search.pop();
             if (IsInList(search_in_past, check)) {
                 continue;
             }
+            x++;
             search_in_past.push_back(check);
             if (searchable->isGoalState(check)) {
                 break;
@@ -57,10 +62,10 @@ public:
                 to_search.push(*adj_itr);
             }
         }
+        cout << x << endl;
         return BuildPath(check);
-
     }
 };
 
 
-#endif //EX4_DEPTHFIRSTSEARCH_H
+#endif //EX4_BREADTHFIRSTSEARCH_H

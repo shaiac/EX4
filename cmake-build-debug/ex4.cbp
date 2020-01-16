@@ -84,13 +84,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/BestFirstSearch.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/BreadthFirstSearch.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/CacheManager.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/ClientHandler.h">
-			<Option target="ex4"/>
-		</Unit>
-		<Unit filename="/home/shaiac/CLionProjects/ex4/DepthFirstSearch.cpp">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/DepthFirstSearch.h">

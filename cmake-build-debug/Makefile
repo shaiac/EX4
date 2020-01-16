@@ -123,33 +123,6 @@ ex4/fast:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/build
 .PHONY : ex4/fast
 
-DepthFirstSearch.o: DepthFirstSearch.cpp.o
-
-.PHONY : DepthFirstSearch.o
-
-# target to build an object file
-DepthFirstSearch.cpp.o:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/DepthFirstSearch.cpp.o
-.PHONY : DepthFirstSearch.cpp.o
-
-DepthFirstSearch.i: DepthFirstSearch.cpp.i
-
-.PHONY : DepthFirstSearch.i
-
-# target to preprocess a source file
-DepthFirstSearch.cpp.i:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/DepthFirstSearch.cpp.i
-.PHONY : DepthFirstSearch.cpp.i
-
-DepthFirstSearch.s: DepthFirstSearch.cpp.s
-
-.PHONY : DepthFirstSearch.s
-
-# target to generate assembly for a file
-DepthFirstSearch.cpp.s:
-	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/DepthFirstSearch.cpp.s
-.PHONY : DepthFirstSearch.cpp.s
-
 FileCacheManager.o: FileCacheManager.cpp.o
 
 .PHONY : FileCacheManager.o
@@ -348,9 +321,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex4"
 	@echo "... edit_cache"
-	@echo "... DepthFirstSearch.o"
-	@echo "... DepthFirstSearch.i"
-	@echo "... DepthFirstSearch.s"
 	@echo "... FileCacheManager.o"
 	@echo "... FileCacheManager.i"
 	@echo "... FileCacheManager.s"

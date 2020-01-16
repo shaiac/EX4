@@ -4,7 +4,8 @@
 
 #ifndef EX4_POINT_H
 #define EX4_POINT_H
-
+using namespace std;
+#include <string>
 
 class Point {
 protected:
@@ -19,6 +20,9 @@ public:
     double getY();
     void SetPoint(double x, double y);
     bool isEqual(Point p);
+    bool operator==(Point& p);
+    string createString();
+
 
 };
 

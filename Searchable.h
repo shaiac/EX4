@@ -8,14 +8,16 @@
 #include <list>
 
 #include "State.h"
+#include <vector>
 
 template<typename T>
 class Searchable {
-    virtual State<T*>* getInitialState() = 0;
+public:
+    virtual State<T>* getInitialState() = 0;
 
-    virtual bool isGoalState(State<T*> state) = 0;
+    virtual bool isGoalState(State<T>* state) = 0;
 
-    virtual list<State<T*>*> GetAllPossibleStates(State<T*>* state) = 0;
+    virtual vector<State<T>*> GetAllPossibleStates(State<T>* state) = 0;
 };
 
 

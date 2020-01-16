@@ -1,7 +1,7 @@
 //
 // Created by shaiac on 14/01/2020.
 //
-
+using namespace std;
 #include "Point.h"
 
 Point::Point() {
@@ -43,4 +43,16 @@ bool Point::isEqual(Point p) {
         return false;
     }
     return true;
+}
+
+bool Point::operator==(Point &p) {
+    return isEqual(p);
+}
+
+string Point::createString() {
+    string point;
+    string x = to_string(this->getX());
+    string y = to_string(this->getY());
+    point = "(" + x + "," + y + ")";
+    return point;
 }

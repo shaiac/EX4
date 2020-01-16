@@ -7,25 +7,28 @@
 
 #include "Searchable.h"
 #include "Point.h"
-#include <list>
+#include <vector>
 #include <cstring>
+#include <vector>
 
-class Matrix : Searchable<Point> {
+class Matrix : public Searchable<Point*> {
 protected:
-    list<list<State<Point*> *>> Tmatrix;
+    vector<vector<State<Point*> *>> Tmatrix;
     State<Point*>* goalState;
     State<Point*>* startState;
     int Size = 0;
 public:
     Matrix();
 
-    void BuildMatrix(list<string> lines);
+    void setStartGoal(Point* start, Point* goal, double);
 
-    State<Point*>* getInitialState();
+    void BuildMatrix(vector<string> lines);
+
+    State<Point*>* getInitialState() override;
 
     bool isGoalState(State<Point*>* currentState);
 
-    list<State<Point*>> GetAllPossibleStates(State<Point> state);
+    vector<State<Point*>*> GetAllPossibleStates(State<Point*>* state);
 };
 
 #endif //EX4_MATRIX_H
