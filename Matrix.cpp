@@ -114,23 +114,19 @@ vector<State<Point *> *> Matrix::GetAllPossibleStates(State<Point *> *state) {
     int size = this->Size;
     vector<State<Point *> *> adjs;
     if (x + 1 < size) {
-        State<Point *> *right = new State<Point *>(new Point(x + 1, y), this->Tmatrix[x + 1][y]->GetCost());
-        right->SetCameFrom(state);
+        State<Point *> *right = this->Tmatrix[x + 1][y];
         adjs.push_back(right);
     }
     if (x - 1 >= 0) {
-        State<Point *> *left = new State<Point *>(new Point(x - 1, y), this->Tmatrix[x - 1][y]->GetCost());
-        left->SetCameFrom(state);
+        State<Point *> *left = this->Tmatrix[x - 1][y];
         adjs.push_back(left);
     }
     if (y + 1 < size) {
-        State<Point *> *up = new State<Point *>(new Point(x, y + 1), this->Tmatrix[x][y + 1]->GetCost());
-        up->SetCameFrom(state);
+        State<Point *> *up = this->Tmatrix[x][y + 1];
         adjs.push_back(up);
     }
     if (y - 1 >= 0) {
-        State<Point *> *down = new State<Point *>(new Point(x, y - 1), this->Tmatrix[x][y - 1]->GetCost());
-        down->SetCameFrom(state);
+        State<Point *> *down = this->Tmatrix[x][y - 1];
         adjs.push_back(down);
     }
     return adjs;

@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/Astar.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/BestFirstSearch.h">
 			<Option target="ex4"/>
 		</Unit>
