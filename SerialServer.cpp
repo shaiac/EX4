@@ -3,6 +3,7 @@
 #include <zconf.h>
 #include "sys/socket.h"
 #include <iostream>
+#include <thread>
 
 //
 // Created by shaiac on 13/01/2020.
@@ -45,11 +46,9 @@ void MySerialServer:: open(int port, ClientHandler *clientH) {
         cerr << "Error, during the listening command" << endl;
         exit(-3);
     }
-    this->start(socketfd, address, clientH);
-    /**
-    thread start
+    //this->start(socketfd, address, clientH);
+    thread start([this, socketfd, address, clientH] { this->start(socketfd, address, clientH); });
     start.join();
-     */
     close(socketfd);
     std::cout << "server is now connected to Client" << std::endl;
 }

@@ -12,60 +12,8 @@
 using namespace std;
 
 template<typename T>
-struct CustomCompare {
-    bool operator()(State<T> *lhs, State<T> *rhs) {
-        return lhs->GetCost() > rhs->GetCost();
-    }
-};
-
-template<typename T>
-class BestFirstSearch : public Searcher<T, vector<State<T> *>> {
+class BestFirstSearch : public DSearcher<T> {
 public:
-
-    State<T> *isInList(list<State<T> *> *checklist, State<T> *check) {
-        for (auto itr = checklist->begin(); itr != checklist->end(); itr++) {
-            State<T> *itrP = *itr;
-            if (*(itrP->getState()) == *(check->getState())) {
-                checklist->erase(itr);
-                return *itr;
-            }
-        }
-        return nullptr;
-
-    }
-
-    bool isInPriorityQueue(priority_queue<State<T> *, vector<State<T> *>, CustomCompare<T>>* pq, State<T> *finder) {
-        list<State<T> *> holdOn;
-        bool isIn = false;
-        State<T> *check;
-        while (!pq->empty()) {
-            check = pq->top();
-            pq->pop();
-            if (check->getState() == finder->getState()) {
-                isIn = true;
-                break;
-            }
-            holdOn.push_back(check);
-        }
-        while (!holdOn.empty()) {
-            pq->push(holdOn.front());
-            holdOn.pop_front();
-        }
-        return isIn;
-    }
-
-    vector<State<T> *> BuildPath(State<T> *end) {
-        vector<State<T> *> rev_path;
-        rev_path.push_back(end);
-        State<T> *back = end->GetCameFrom();
-        while (back != nullptr) {
-            rev_path.push_back(back);
-            back = back->GetCameFrom();
-        }
-        return rev_path;
-
-    }
-
     vector<State<T> *> Search(Searchable<T> *searchable) {
         unordered_set<State<T> *> search_in_past;
         vector<State<T> *> neighbors;
@@ -79,6 +27,7 @@ public:
             pq.pop();
             search_in_past.insert(check);
             if (searchable->isGoalState(check)) {
+                cout << "bestFS Nodes:" << endl;
                 cout << x << endl;
                 return this->BuildPath(check);;
             }
@@ -99,8 +48,6 @@ public:
                     tmp->SetCameFrom(check);
                     pq.push(tmp);
                     continue;
-                } else if (stateInPq){
-                    pq.push(tmp);
                 }
             }
         }

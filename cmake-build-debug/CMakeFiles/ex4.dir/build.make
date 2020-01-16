@@ -96,18 +96,18 @@ CMakeFiles/ex4.dir/StringReverser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/StringReverser.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/StringReverser.cpp -o CMakeFiles/ex4.dir/StringReverser.cpp.s
 
-CMakeFiles/ex4.dir/MyClientHandler.cpp.o: CMakeFiles/ex4.dir/flags.make
-CMakeFiles/ex4.dir/MyClientHandler.cpp.o: ../MyClientHandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ex4.dir/MyClientHandler.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/MyClientHandler.cpp.o -c /home/shaiac/CLionProjects/ex4/MyClientHandler.cpp
+CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: ../MyTestClientHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o -c /home/shaiac/CLionProjects/ex4/MyTestClientHandler.cpp
 
-CMakeFiles/ex4.dir/MyClientHandler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/MyClientHandler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaiac/CLionProjects/ex4/MyClientHandler.cpp > CMakeFiles/ex4.dir/MyClientHandler.cpp.i
+CMakeFiles/ex4.dir/MyTestClientHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/MyTestClientHandler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaiac/CLionProjects/ex4/MyTestClientHandler.cpp > CMakeFiles/ex4.dir/MyTestClientHandler.cpp.i
 
-CMakeFiles/ex4.dir/MyClientHandler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/MyClientHandler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/MyClientHandler.cpp -o CMakeFiles/ex4.dir/MyClientHandler.cpp.s
+CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/MyTestClientHandler.cpp -o CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s
 
 CMakeFiles/ex4.dir/FileCacheManager.cpp.o: CMakeFiles/ex4.dir/flags.make
 CMakeFiles/ex4.dir/FileCacheManager.cpp.o: ../FileCacheManager.cpp
@@ -148,15 +148,29 @@ CMakeFiles/ex4.dir/Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/Matrix.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/Matrix.cpp -o CMakeFiles/ex4.dir/Matrix.cpp.s
 
+CMakeFiles/ex4.dir/MyClientHandler.cpp.o: CMakeFiles/ex4.dir/flags.make
+CMakeFiles/ex4.dir/MyClientHandler.cpp.o: ../MyClientHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ex4.dir/MyClientHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ex4.dir/MyClientHandler.cpp.o -c /home/shaiac/CLionProjects/ex4/MyClientHandler.cpp
+
+CMakeFiles/ex4.dir/MyClientHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex4.dir/MyClientHandler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shaiac/CLionProjects/ex4/MyClientHandler.cpp > CMakeFiles/ex4.dir/MyClientHandler.cpp.i
+
+CMakeFiles/ex4.dir/MyClientHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex4.dir/MyClientHandler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shaiac/CLionProjects/ex4/MyClientHandler.cpp -o CMakeFiles/ex4.dir/MyClientHandler.cpp.s
+
 # Object files for target ex4
 ex4_OBJECTS = \
 "CMakeFiles/ex4.dir/main.cpp.o" \
 "CMakeFiles/ex4.dir/SerialServer.cpp.o" \
 "CMakeFiles/ex4.dir/StringReverser.cpp.o" \
-"CMakeFiles/ex4.dir/MyClientHandler.cpp.o" \
+"CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o" \
 "CMakeFiles/ex4.dir/FileCacheManager.cpp.o" \
 "CMakeFiles/ex4.dir/Point.cpp.o" \
-"CMakeFiles/ex4.dir/Matrix.cpp.o"
+"CMakeFiles/ex4.dir/Matrix.cpp.o" \
+"CMakeFiles/ex4.dir/MyClientHandler.cpp.o"
 
 # External object files for target ex4
 ex4_EXTERNAL_OBJECTS =
@@ -164,13 +178,14 @@ ex4_EXTERNAL_OBJECTS =
 ex4: CMakeFiles/ex4.dir/main.cpp.o
 ex4: CMakeFiles/ex4.dir/SerialServer.cpp.o
 ex4: CMakeFiles/ex4.dir/StringReverser.cpp.o
-ex4: CMakeFiles/ex4.dir/MyClientHandler.cpp.o
+ex4: CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o
 ex4: CMakeFiles/ex4.dir/FileCacheManager.cpp.o
 ex4: CMakeFiles/ex4.dir/Point.cpp.o
 ex4: CMakeFiles/ex4.dir/Matrix.cpp.o
+ex4: CMakeFiles/ex4.dir/MyClientHandler.cpp.o
 ex4: CMakeFiles/ex4.dir/build.make
 ex4: CMakeFiles/ex4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ex4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ex4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ex4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,21 +1,21 @@
 //
-// Created by shaiac on 13/01/2020.
+// Created by shaiac on 16/01/2020.
 //
 
 #ifndef EX4_MYCLIENTHANDLER_H
 #define EX4_MYCLIENTHANDLER_H
-
 #include "ClientHandler.h"
-#include "CacheManager.h"
 #include "Solver.h"
-#include "StringReverser.h"
+#include "Matrix.h"
+#include "OA.h"
+#include "FileCacheManager.h"
 
-class MyClientHandler : public ClientHandler{
+class MyClientHandler : public  ClientHandler{
 protected:
-    CacheManager*cacheManager;
-    StringReverser *solver;
+    CacheManager* cacheManager;
+    Solver<Matrix*,string> *solver;
 public:
-     MyClientHandler();
+    MyClientHandler(Solver<Matrix*,string >* solver);
     void handleClient(int client_socket);
 };
 

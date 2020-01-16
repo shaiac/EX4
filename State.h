@@ -29,6 +29,8 @@ public:
     double getTrailCost();
 
     void setTrailCost(double trailCost);
+
+    string Direction(T second);
 };
 
 template<typename T>
@@ -66,6 +68,11 @@ double State<T>::getTrailCost() {
 template<typename T>
 void State<T>::setTrailCost(double trailCost) {
     this->trailCost = trailCost;
+}
+
+template<typename T>
+string State<T>::Direction(T second) {
+    return *(this->getState()) > (*second);
 }
 
 

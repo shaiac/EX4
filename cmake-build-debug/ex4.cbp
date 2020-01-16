@@ -99,6 +99,9 @@
 		<Unit filename="/home/shaiac/CLionProjects/ex4/ClientHandler.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/DSearcher.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/DepthFirstSearch.h">
 			<Option target="ex4"/>
 		</Unit>
@@ -118,6 +121,15 @@
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/MyClientHandler.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/MyTestClientHandler.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/MyTestClientHandler.h">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/OA.h">
 			<Option target="ex4"/>
 		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/Point.cpp">

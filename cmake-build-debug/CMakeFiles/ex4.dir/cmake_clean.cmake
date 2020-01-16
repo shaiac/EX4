@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
   "CMakeFiles/ex4.dir/Matrix.cpp.o"
   "CMakeFiles/ex4.dir/MyClientHandler.cpp.o"
+  "CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
   "CMakeFiles/ex4.dir/Point.cpp.o"
   "CMakeFiles/ex4.dir/SerialServer.cpp.o"
   "CMakeFiles/ex4.dir/StringReverser.cpp.o"

@@ -29,6 +29,9 @@ public:
     bool isGoalState(State<Point*>* currentState);
 
     vector<State<Point*>*> GetAllPossibleStates(State<Point*>* state);
-};
+
+    string matrixToString();
+
+    };
 
 #endif //EX4_MATRIX_H

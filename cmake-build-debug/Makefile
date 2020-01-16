@@ -204,6 +204,33 @@ MyClientHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyClientHandler.cpp.s
 .PHONY : MyClientHandler.cpp.s
 
+MyTestClientHandler.o: MyTestClientHandler.cpp.o
+
+.PHONY : MyTestClientHandler.o
+
+# target to build an object file
+MyTestClientHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o
+.PHONY : MyTestClientHandler.cpp.o
+
+MyTestClientHandler.i: MyTestClientHandler.cpp.i
+
+.PHONY : MyTestClientHandler.i
+
+# target to preprocess a source file
+MyTestClientHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyTestClientHandler.cpp.i
+.PHONY : MyTestClientHandler.cpp.i
+
+MyTestClientHandler.s: MyTestClientHandler.cpp.s
+
+.PHONY : MyTestClientHandler.s
+
+# target to generate assembly for a file
+MyTestClientHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/ex4.dir/build.make CMakeFiles/ex4.dir/MyTestClientHandler.cpp.s
+.PHONY : MyTestClientHandler.cpp.s
+
 Point.o: Point.cpp.o
 
 .PHONY : Point.o
@@ -330,6 +357,9 @@ help:
 	@echo "... MyClientHandler.o"
 	@echo "... MyClientHandler.i"
 	@echo "... MyClientHandler.s"
+	@echo "... MyTestClientHandler.o"
+	@echo "... MyTestClientHandler.i"
+	@echo "... MyTestClientHandler.s"
 	@echo "... Point.o"
 	@echo "... Point.i"
 	@echo "... Point.s"
