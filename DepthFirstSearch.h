@@ -16,6 +16,7 @@ template<typename T>
 class DepthFirstSearch : public DSearcher<T> {
 public:
     vector<State<T> *> Search(Searchable<T> *searchable) {
+        int nodes = 0;
         list<State<T> *> search_in_past;
         stack<State<T> *> to_search;
         State<T> *check;
@@ -23,6 +24,7 @@ public:
         while (!to_search.empty()) {
             check = to_search.top();
             to_search.pop();
+            nodes++;
             if (this->IsInList(search_in_past, check)) {
                 continue;
             }
@@ -35,8 +37,9 @@ public:
                 to_search.push(*adj_itr);
             }
         }
+        cout<< "DFS Nodes:" << endl;
+        cout<< nodes << endl;
         return this->BuildPath(check);
-
     }
 };
 

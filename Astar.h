@@ -26,9 +26,9 @@ public:
                 searchable->getInitialState()->GetCost()));
         pq.push(searchable->getInitialState());
         State<T> *check;
-        int x = 0;
+        int nodes = 0;
         while (!pq.empty()) {
-            x++;
+            nodes++;
             check = pq.top();
             pq.pop();
             if (searchable->isGoalState(check)) {
@@ -58,7 +58,7 @@ public:
 
         }
         cout << "Astar Nodes:" << endl;
-        cout << x << endl;
+        cout << nodes << endl;
         return this->BuildPath(check);
     }
 };

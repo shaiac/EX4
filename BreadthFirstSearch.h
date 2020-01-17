@@ -23,14 +23,14 @@ public:
         queue<State<T> *> to_search;
         State<T> *check;
         to_search.push(searchable->getInitialState());
-        int x = 0;
+        int nodes = 0;
         while (!to_search.empty()) {
             check = to_search.front();
             to_search.pop();
+            nodes++;
             if (this->IsInList(search_in_past, check)) {
                 continue;
             }
-            x++;
             search_in_past.push_back(check);
             if (searchable->isGoalState(check)) {
                 break;
@@ -40,7 +40,8 @@ public:
                 to_search.push(*adj_itr);
             }
         }
-        cout << x << endl;
+        cout << "BFS Nodes:" << endl;
+        cout << nodes << endl;
         return this->BuildPath(check);
     }
 };

@@ -20,15 +20,15 @@ public:
         State<T> *check;
         priority_queue<State<T> *, vector<State<T> *>, CustomCompare<T>> pq;
         pq.push(searchable->getInitialState());
-        int x = 0;
+        int nodes = 0;
         while (!pq.empty()) {
-            x++;
             check = pq.top();
             pq.pop();
+            nodes++;
             search_in_past.insert(check);
             if (searchable->isGoalState(check)) {
                 cout << "bestFS Nodes:" << endl;
-                cout << x << endl;
+                cout << nodes << endl;
                 return this->BuildPath(check);;
             }
             neighbors = searchable->GetAllPossibleStates(check);
