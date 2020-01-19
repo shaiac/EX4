@@ -14,7 +14,7 @@
 template<typename T>
 struct CustomCompare {
     bool operator()(State<T> *lhs, State<T> *rhs) {
-        return lhs->GetCost() + lhs->getTrailCost() > rhs->GetCost() + rhs->getTrailCost();
+        return lhs->getTrailCost() > rhs->getTrailCost();
     }
 };
 

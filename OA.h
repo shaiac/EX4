@@ -19,6 +19,7 @@ public:
     }
 
     string solve(P problem) {
+        string trailCost;
         vector<State<T>*> solution = this->searcher->Search(problem);
         auto itr = solution.end();
         itr--;
@@ -28,13 +29,13 @@ public:
         while(itr != solution.begin()){
             State<T> * second = *itr;
             itr--;
-            stringSolution += first->Direction(second->getState());
+            trailCost = to_string(int(second->getTrailCost()));
+            stringSolution += first->Direction(second->getState()) + "(" + trailCost + "), ";
             first = second;
         }
         State<T> * second = *itr;
-        itr--;
-        stringSolution += first->Direction(second->getState());
-        stringSolution = stringSolution.substr(0, stringSolution.length() - 2);
+        trailCost = to_string(int(second->getTrailCost()));
+        stringSolution += first->Direction(second->getState()) + "(" + trailCost + ")";
         return stringSolution;
     }
 };

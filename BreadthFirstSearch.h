@@ -37,7 +37,13 @@ public:
             }
             vector<State<T> *> adj = searchable->GetAllPossibleStates(check);
             for (auto adj_itr = adj.begin(); adj_itr != adj.end(); adj_itr++) {
-                to_search.push(*adj_itr);
+                State<T> *neigh = *adj_itr;
+                if (neigh->GetCost() < 0) {
+                    continue;
+                }
+                neigh->SetCameFrom(check);
+                neigh->setTrailCost(check->getTrailCost() + neigh->GetCost());
+                to_search.push(neigh);
             }
         }
         cout << "BFS Nodes:" << endl;

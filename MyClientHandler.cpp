@@ -7,6 +7,7 @@
 #include "MyClientHandler.h"
 #include <vector>
 #include <string>
+#include "pthread.h"
 
 MyClientHandler::MyClientHandler(Solver<Matrix*,string >* solver) {
     this->solver = solver;

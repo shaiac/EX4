@@ -123,6 +123,12 @@
 		<Unit filename="/home/shaiac/CLionProjects/ex4/MyClientHandler.h">
 			<Option target="ex4"/>
 		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/MyParallelServer.cpp">
+			<Option target="ex4"/>
+		</Unit>
+		<Unit filename="/home/shaiac/CLionProjects/ex4/MyParallelServer.h">
+			<Option target="ex4"/>
+		</Unit>
 		<Unit filename="/home/shaiac/CLionProjects/ex4/MyTestClientHandler.cpp">
 			<Option target="ex4"/>
 		</Unit>

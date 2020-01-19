@@ -1,16 +1,24 @@
-#include "SerialServer.h"
+//
+// Created by shaiac on 18/01/2020.
+//
+
+#include "MyParallelServer.h"
 #include <netinet/in.h>
 #include <zconf.h>
 #include "sys/socket.h"
 #include <iostream>
-#include <thread>
+#include <pthread.h>
+#include <bits/sigthread.h>
+#include <csignal>
 
-//
-// Created by shaiac on 13/01/2020.
-//
+void* clientHandle(void *threadid) {
+    auto client = (ClientData*) threadid;
+    client->clientHandler->handleClient(client->client_socket);
+    pthread_exit(NULL);
+}
 
-
-void MySerialServer:: start(int socketfd, sockaddr_in address, ClientHandler *clientH) {
+void MyParallelServer::start(int socketfd, sockaddr_in address, ClientHandler *clientH) {
+    pthread_t thread;
     int client_socket;
     timeval timeout;
     timeout.tv_sec = 60;
@@ -28,12 +36,20 @@ void MySerialServer:: start(int socketfd, sockaddr_in address, ClientHandler *cl
             exit(-4);
         }
         std::cout << "server is now connected to Client" << std::endl;
-        clientH->handleClient(client_socket);
+        auto client = new ClientData;
+        client->clientHandler = clientH;
+        client->client_socket = client_socket;
+        if (pthread_create(&thread, nullptr, clientHandle, client) < 0) {
+            cerr << "Error, during creating a thread" << endl;
+            exit(1);
+        }
+        this->threadsList.push_front(thread);
+        this->stop();
     }
     close(socketfd);
 }
 
-void MySerialServer:: open(int port, ClientHandler *clientH) {
+void MyParallelServer::open(int port, ClientHandler *clientH) {
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
         exit(-1);
@@ -51,11 +67,19 @@ void MySerialServer:: open(int port, ClientHandler *clientH) {
         cerr << "Error, during the listening command" << endl;
         exit(-3);
     }
-    //this->start(socketfd, address, clientH);
-    thread start([this, socketfd, address, clientH] { this->start(socketfd, address, clientH); });
-    start.join();
+    this->start(socketfd, address, clientH);
 }
 
-void MySerialServer::stop() {
-    this->toStop = true;
+void MyParallelServer::stop() {
+    list<pthread_t>::iterator itr;
+    for (itr = this->threadsList.begin(); itr != this->threadsList.end(); itr++) {
+        int ret = 0;
+        pthread_t thread = *itr;
+        /**if ((ret = pthread_kill(thread, 0) != 0)) {
+            this->threadsList.erase(itr);
+        }*/
+    }
+    if (this->threadsList.empty()) {
+        this->toStop = false;
+    }
 }

@@ -25,6 +25,15 @@ CMakeFiles/ex4.dir/MyClientHandler.cpp.o: ../Searcher.h
 CMakeFiles/ex4.dir/MyClientHandler.cpp.o: ../Solver.h
 CMakeFiles/ex4.dir/MyClientHandler.cpp.o: ../State.h
 
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../CacheManager.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../ClientHandler.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../MyParallelServer.cpp
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../MyParallelServer.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../MyTestClientHandler.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../Solver.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../StringReverser.h
+CMakeFiles/ex4.dir/MyParallelServer.cpp.o: ../server_side.h
+
 CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: ../CacheManager.h
 CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: ../ClientHandler.h
 CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o: ../FileCacheManager.h

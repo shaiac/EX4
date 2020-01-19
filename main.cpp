@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     //MyTestClientHandler *mch = new MyTestClientHandler();
     //MySerialServer *mss = new MySerialServer();
     //mss->open(7767, mch);
-    Matrix *matrix = new Matrix();
+    /**Matrix *matrix = new Matrix();
     vector<string> lines;
     string line;
     fstream file;
@@ -52,11 +52,12 @@ int main(int argc, char *argv[]) {
     cout<< "BestFS:: "<<endl;
     cout<< vec_bestfs.size()<<endl;
     State<Point *>* state3 = vec_bestfs.begin().operator*();
-    cout << state3->getTrailCost() <<endl;
-    /**BestFirstSearch<Point *> *bestfs = new BestFirstSearch<Point *>();
-    OA<Matrix*, Point*>* oa = new OA<Matrix*, Point*>(bestfs);
+    cout << state3->getTrailCost() <<endl;*/
+    BestFirstSearch<Point *> *bestfs = new BestFirstSearch<Point *>();
+    DepthFirstSearch<Point *> *dfs = new DepthFirstSearch<Point*>();
+    OA<Matrix*, Point*>* oa = new OA<Matrix*, Point*>(dfs);
     MyClientHandler *clientHandler = new  MyClientHandler(oa);
     MySerialServer *mss = new MySerialServer();
-    mss->open(port, clientHandler);*/
+    mss->open(port, clientHandler);
     return 0;
 }

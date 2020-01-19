@@ -62,30 +62,30 @@ string Point::operator>(Point &p) {
     bool y = this->getY() > p.getY();
     bool  eqauly = this->getY() == p.getY();
     if(x && y && !eqauly && !equalx){
-        return "Up Left, ";
+        return "Up Left ";
     }
     if(!x && !y && !eqauly && !equalx){
-        return "Down Right, ";
+        return "Down Right ";
     }
     if(eqauly && equalx){
-        return "Same, ";
+        return "Same ";
     }
     if(x && eqauly){
-        return "Up, ";
+        return "Up ";
     }
     if(y && equalx){
-        return "Left, ";
+        return "Left ";
     }
     if(!x && eqauly){
-        return "Down, ";
+        return "Down ";
     }
     if(!y && equalx){
-        return "Right, ";
+        return "Right ";
     }
     if(x && !y){
-        return "Up Right, ";
+        return "Up Right ";
     }
     if(!x && y){
-        return "Down Left, ";
+        return "Down Left ";
     }
 }

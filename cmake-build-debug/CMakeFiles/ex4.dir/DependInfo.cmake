@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/shaiac/CLionProjects/ex4/FileCacheManager.cpp" "/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/FileCacheManager.cpp.o"
   "/home/shaiac/CLionProjects/ex4/Matrix.cpp" "/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/Matrix.cpp.o"
   "/home/shaiac/CLionProjects/ex4/MyClientHandler.cpp" "/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/MyClientHandler.cpp.o"
+  "/home/shaiac/CLionProjects/ex4/MyParallelServer.cpp" "/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/MyParallelServer.cpp.o"
   "/home/shaiac/CLionProjects/ex4/MyTestClientHandler.cpp" "/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/MyTestClientHandler.cpp.o"
   "/home/shaiac/CLionProjects/ex4/Point.cpp" "/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/Point.cpp.o"
   "/home/shaiac/CLionProjects/ex4/SerialServer.cpp" "/home/shaiac/CLionProjects/ex4/cmake-build-debug/CMakeFiles/ex4.dir/SerialServer.cpp.o"
