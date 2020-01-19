@@ -21,7 +21,6 @@ public:
     void SetPoint(double x, double y);
     bool isEqual(Point p);
     bool operator==(Point& p);
-    string operator>(Point& p);
     string createString();
 
 

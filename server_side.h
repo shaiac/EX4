@@ -6,7 +6,7 @@
 #define EX4_SERVER_SIDE_H
 
 #include "ClientHandler.h"
-#include "MyTestClientHandler.h"
+#include "MyClientHandler.h"
 using namespace std;
 namespace server_side {
     class Server {

@@ -3,6 +3,7 @@
 //
 
 #include <assert.h>
+#include <iostream>
 #include "Matrix.h"
 
 Matrix::Matrix() {
@@ -47,27 +48,13 @@ vector<State<Point *> *> MakeVectorAsState(vector<string> line_str, double x) {
     return line_State;
 }
 
-void Matrix::setStartGoal(Point *start, Point *goal, double startCost) {
-    this->startState = new State<Point *>(start, startCost);
-    this->goalState = new State<Point *>(goal, 0);
-}
-
-string Matrix::matrixToString() {
-    string matrixString = "";
-    for(auto itr = this->Tmatrix.begin(); itr != this->Tmatrix.end(); itr++) {
-        vector<State<Point *> *> line = *itr;
-        for(auto it = line.begin(); it != line.end(); it++){
-            State<Point *> * state = *it;
-            matrixString += to_string(state->GetCost());
-            matrixString += ",";
-        }
-        matrixString += "\n";
-    }
+void Matrix::setStartGoal(State<Point *> *start, State<Point *> *goal) {
+    this->startState = start;
+    this->goalState = goal;
 }
 
 void Matrix::BuildMatrix(vector<string> lines) {
     int i;
-    string *splitLine;
     vector<string>::iterator it;
     vector<Point *> start_end;
     int size = 0;
@@ -103,14 +90,11 @@ void Matrix::BuildMatrix(vector<string> lines) {
     Point *start = start_end.front();
     pop_front(start_end);
     Point *goal = start_end.front();
-    double startCost = Tmatrix[start->getX()][start->getY()]->GetCost();
-    this->setStartGoal(start, goal, startCost);
+    this->setStartGoal(Tmatrix[start->getX()][start->getY()], Tmatrix[goal->getX()][goal->getY()]);
     this->Tmatrix[start->getX()][start->getY()]->setTrailCost(0);
-
 }
 
 State<Point *> *Matrix::getInitialState() {
-    this->startState->setTrailCost(this->startState->GetCost());
     return this->startState;
 }
 
@@ -126,13 +110,14 @@ vector<State<Point *> *> Matrix::GetAllPossibleStates(State<Point *> *state) {
     double y = point->getY();
     int size = this->Size;
     vector<State<Point *> *> adjs;
-    if (y + 1 < size) {
-        State<Point *> *up = this->Tmatrix[x][y + 1];
-        adjs.push_back(up);
-    }
     if (x + 1 < size) {
         State<Point *> *right = this->Tmatrix[x + 1][y];
         adjs.push_back(right);
+    }
+
+    if (y + 1 < size) {
+        State<Point *> *up = this->Tmatrix[x][y + 1];
+        adjs.push_back(up);
     }
     if (x - 1 >= 0) {
         State<Point *> *left = this->Tmatrix[x - 1][y];

@@ -20,7 +20,7 @@ protected:
 public:
     Matrix();
 
-    void setStartGoal(Point* start, Point* goal, double);
+    void setStartGoal(State<Point*>* start, State<Point*>* goal);
 
     void BuildMatrix(vector<string> lines);
 
@@ -29,9 +29,6 @@ public:
     bool isGoalState(State<Point*>* currentState);
 
     vector<State<Point*>*> GetAllPossibleStates(State<Point*>* state);
-
-    string matrixToString();
-
-    };
+};
 
 #endif //EX4_MATRIX_H

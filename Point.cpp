@@ -56,36 +56,3 @@ string Point::createString() {
     point = "(" + x + "," + y + ")";
     return point;
 }
-string Point::operator>(Point &p) {
-    bool x = this->getX() > p.getX();
-    bool equalx = this->getX() == p.getX();
-    bool y = this->getY() > p.getY();
-    bool  eqauly = this->getY() == p.getY();
-    if(x && y && !eqauly && !equalx){
-        return "Up Left ";
-    }
-    if(!x && !y && !eqauly && !equalx){
-        return "Down Right ";
-    }
-    if(eqauly && equalx){
-        return "Same ";
-    }
-    if(x && eqauly){
-        return "Up ";
-    }
-    if(y && equalx){
-        return "Left ";
-    }
-    if(!x && eqauly){
-        return "Down ";
-    }
-    if(!y && equalx){
-        return "Right ";
-    }
-    if(x && !y){
-        return "Up Right ";
-    }
-    if(!x && y){
-        return "Down Left ";
-    }
-}

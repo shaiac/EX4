@@ -3,7 +3,6 @@
 #include <zconf.h>
 #include "sys/socket.h"
 #include <iostream>
-#include <thread>
 
 //
 // Created by shaiac on 13/01/2020.
@@ -13,27 +12,22 @@
 void MySerialServer:: start(int socketfd, sockaddr_in address, ClientHandler *clientH) {
     int client_socket;
     timeval timeout;
-    timeout.tv_sec = 60;
+    timeout.tv_sec = 120;
     timeout.tv_usec = 0;
     setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout));
     while(!this->toStop) {
         if ((client_socket = accept(socketfd, (struct sockaddr *) &address,
                                     (socklen_t *) &address)) < 0) {
-            if (errno == EWOULDBLOCK || errno == EAGAIN) {
-                cout << "Timeout, no more clients server closed" << endl;
-                break;
-
-            }
             cerr << "Error, during accepting client" << endl;
             exit(-4);
         }
-        std::cout << "server is now connected to Client" << std::endl;
         clientH->handleClient(client_socket);
     }
     close(socketfd);
 }
 
 void MySerialServer:: open(int port, ClientHandler *clientH) {
+    int client_socket;
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
         exit(-1);
@@ -51,9 +45,13 @@ void MySerialServer:: open(int port, ClientHandler *clientH) {
         cerr << "Error, during the listening command" << endl;
         exit(-3);
     }
-    //this->start(socketfd, address, clientH);
-    thread start([this, socketfd, address, clientH] { this->start(socketfd, address, clientH); });
+    this->start(socketfd, address, clientH);
+    /**
+    thread start
     start.join();
+     */
+    close(socketfd);
+    std::cout << "server is now connected to Client" << std::endl;
 }
 
 void MySerialServer::stop() {
