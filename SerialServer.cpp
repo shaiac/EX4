@@ -18,7 +18,7 @@
 void MySerialServer:: start(int socketfd, sockaddr_in address, ClientHandler *clientH) {
     int client_socket;
     timeval timeout;
-    timeout.tv_sec = 60;
+    timeout.tv_sec = 120;
     timeout.tv_usec = 0;
     setsockopt(socketfd, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout));
     while(!this->toStop) {
