@@ -9,7 +9,7 @@ In it's current version, the program uses the "AStar" algorithm, after an ampiri
 
 RUN THE PROGRAM:
 
-Download the source files from GitHub (https://github.com/saraiahrak/Ex4).
+Download the source files from GitHub (https://github.com/shaiac/ex4.git).
 Unzip the source files and run the following commands:
 1 -- g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out -pthread
 2 ./a.out <port_number>
