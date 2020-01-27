@@ -13,7 +13,6 @@ Download the source files from GitHub (https://github.com/shaiac/ex4.git).
 Unzip the source files and run the following commands:
 1 -- g++ -std=c++14 *.cpp -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -o a.out -pthread
 2 ./a.out <port_number>
-**Providing a port number in the second command is optional**
 
 After running the commands, connect to the server as client.
 You can use any simple TCP base client program that sends string lines, or use a telnet command- in a seperate Terminal of the same machine, connect to the program as client by running the following command:
