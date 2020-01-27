@@ -10,6 +10,9 @@
 #include "Solver.h"
 #include "StringReverser.h"
 
+/**
+ * Class that handle problem of string and solution is the revers string.
+ */
 class MyTestClientHandler : public ClientHandler{
 protected:
     CacheManager* cacheManager;

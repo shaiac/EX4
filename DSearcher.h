@@ -11,13 +11,22 @@
 #include <list>
 #include <queue>
 
+/**
+ * Comparing between 2 states by the trail cost, we will use in in the priority queue to
+ * which state has the priority.
+ * @tparam T the type of the object.
+ */
 template<typename T>
 struct CustomCompare {
     bool operator()(State<T> *lhs, State<T> *rhs) {
-        return lhs->getTrailCost() > rhs->getTrailCost();
+        return lhs->GetCost() + lhs->getTrailCost() > rhs->GetCost()+rhs->getTrailCost();
     }
 };
 
+/**
+ * Generic class of the searchers, to prevent duplicated code to find path from start to destination.
+ * @tparam T the type of the object.
+ */
 template<typename T>
 class DSearcher : public Searcher<T, vector<State<T> *>> {
 public:
@@ -33,6 +42,12 @@ public:
         return false;
 
     }
+    /**
+     * Checking if a state is in the priority queue.
+     * @param pq the priority queue.
+     * @param finder state<T> *.
+     * @return true if we found false otherwise.
+     */
     bool isInPriorityQueue(priority_queue<State<T> *, vector<State<T> *>, CustomCompare<T>>* pq, State<T> *finder) {
         list<State<T> *> holdOn;
         bool isIn = false;
@@ -53,6 +68,12 @@ public:
         }
         return isIn;
     }
+    /**
+     * Getting a sate and building a path from start to him, tracing his path by from where he
+     * came from.
+     * @param end the state
+     * @return vector of the path.
+     */
     vector<State<T> *> BuildPath(State<T> *end) {
         vector<State<T> *> rev_path;
         rev_path.push_back(end);
@@ -62,7 +83,6 @@ public:
             back = back->GetCameFrom();
         }
         return rev_path;
-
     }
 };
 

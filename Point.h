@@ -6,7 +6,9 @@
 #define EX4_POINT_H
 using namespace std;
 #include <string>
-
+/**
+ * A point class.
+ */
 class Point {
 protected:
     double x;
@@ -21,6 +23,7 @@ public:
     void SetPoint(double x, double y);
     bool isEqual(Point p);
     bool operator==(Point& p);
+    string operator>(Point& p);
     string createString();
 
 

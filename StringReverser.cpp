@@ -3,6 +3,11 @@
 //
 
 #include "StringReverser.h"
+/**
+ * reversing a string.
+ * @param problem a string.
+ * @return reversed string.
+ */
 string StringReverser::solve(string problem) {
     string solution = "";
     int i;

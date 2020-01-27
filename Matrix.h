@@ -11,6 +11,10 @@
 #include <cstring>
 #include <vector>
 
+/**
+ * Matrix is a searchable that has matrix, start state indicate where to start to go, the goal state
+ * where to finish, and size.
+ */
 class Matrix : public Searchable<Point*> {
 protected:
     vector<vector<State<Point*> *>> Tmatrix;
@@ -20,7 +24,7 @@ protected:
 public:
     Matrix();
 
-    void setStartGoal(State<Point*>* start, State<Point*>* goal);
+    void setStartGoal(Point* start, Point* goal, double);
 
     void BuildMatrix(vector<string> lines);
 
@@ -29,6 +33,9 @@ public:
     bool isGoalState(State<Point*>* currentState);
 
     vector<State<Point*>*> GetAllPossibleStates(State<Point*>* state);
-};
+
+    string matrixToString();
+
+    };
 
 #endif //EX4_MATRIX_H

@@ -5,6 +5,9 @@
 #ifndef EX4_SOLVER_H
 #define EX4_SOLVER_H
 
+/**
+ * Interface for the Slovers.
+ */
 using namespace std;
 template<typename P, typename S>
 class Solver {
