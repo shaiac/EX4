@@ -25,9 +25,6 @@ public:
             check = to_search.top();
             to_search.pop();
             nodes++;
-            if (this->IsInList(search_in_past, check)) {
-                continue;
-            }
             search_in_past.push_back(check);
             if (searchable->isGoalState(check)) {
                 break;
@@ -35,6 +32,9 @@ public:
             vector<State<T> *> adj = searchable->GetAllPossibleStates(check);
             for (auto adj_itr = adj.begin(); adj_itr != adj.end(); adj_itr++) {
                 State<T> * neigh = *adj_itr;
+                if (this->IsInList(search_in_past, neigh)) {
+                    continue;
+                }
                 if(neigh->GetCost() < 0){
                     continue;
                 }
@@ -43,8 +43,10 @@ public:
                 to_search.push(neigh);
             }
         }
-        cout<< "DFS Nodes:" << endl;
-        cout<< nodes << endl;
+        cout<< "DFS Nodes: ";
+        cout<< nodes;
+        cout<<" DFS Trial:";
+        cout<<check->getTrailCost()<<endl;
         return this->BuildPath(check);
     }
 };

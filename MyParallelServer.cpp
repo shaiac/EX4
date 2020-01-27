@@ -8,17 +8,24 @@
 #include "sys/socket.h"
 #include <iostream>
 #include <pthread.h>
+#include <thread>
 #include <bits/sigthread.h>
 #include <csignal>
 
-void* clientHandle(void *threadid) {
-    auto client = (ClientData*) threadid;
-    client->clientHandler->handleClient(client->client_socket);
-    pthread_exit(NULL);
+
+void MyParallelServer::clientHandle(ClientHandler *clientH, int client_socket) {
+   clientH->handleClient(client_socket);
 }
 
+/**
+ * Waiting to accept clients, there is a timeout of 60 sec if there is no clients close the socket.
+ * each client sending to a thread to handle him and moving in the main thread to accept more clients
+ * that way we can handle few clients parallel.
+ * @param socketfd the socket that we opened.
+ * @param address the address.
+ * @param clientH which client handle to use.
+ */
 void MyParallelServer::start(int socketfd, sockaddr_in address, ClientHandler *clientH) {
-    pthread_t thread;
     int client_socket;
     timeval timeout;
     timeout.tv_sec = 60;
@@ -27,6 +34,7 @@ void MyParallelServer::start(int socketfd, sockaddr_in address, ClientHandler *c
     while(!this->toStop) {
         if ((client_socket = accept(socketfd, (struct sockaddr *) &address,
                                     (socklen_t *) &address)) < 0) {
+            //we get to timeout
             if (errno == EWOULDBLOCK || errno == EAGAIN) {
                 cout << "Timeout, no more clients server closed" << endl;
                 break;
@@ -36,19 +44,17 @@ void MyParallelServer::start(int socketfd, sockaddr_in address, ClientHandler *c
             exit(-4);
         }
         std::cout << "server is now connected to Client" << std::endl;
-        auto client = new ClientData;
-        client->clientHandler = clientH;
-        client->client_socket = client_socket;
-        if (pthread_create(&thread, nullptr, clientHandle, client) < 0) {
-            cerr << "Error, during creating a thread" << endl;
-            exit(1);
-        }
-        this->threadsList.push_front(thread);
-        this->stop();
+        thread handle([this, clientH, client_socket] {this->clientHandle(clientH, client_socket); });
+        handle.detach();
     }
     close(socketfd);
 }
 
+/**
+ * opening the server for accepting clients.
+ * @param port the port to listen.
+ * @param clientH which client handle to use.
+ */
 void MyParallelServer::open(int port, ClientHandler *clientH) {
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
@@ -57,7 +63,6 @@ void MyParallelServer::open(int port, ClientHandler *clientH) {
     sockaddr_in address;
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
-    //if we get the port number as an expression we are using the interpreter.
     address.sin_port = htons(port);
     if (bind(socketfd, (struct sockaddr *) &address, sizeof(address)) < 0) {
         cerr << "Error, couldn't bind the socket to an IP" << endl;
@@ -71,15 +76,5 @@ void MyParallelServer::open(int port, ClientHandler *clientH) {
 }
 
 void MyParallelServer::stop() {
-    list<pthread_t>::iterator itr;
-    for (itr = this->threadsList.begin(); itr != this->threadsList.end(); itr++) {
-        int ret = 0;
-        pthread_t thread = *itr;
-        /**if ((ret = pthread_kill(thread, 0) != 0)) {
-            this->threadsList.erase(itr);
-        }*/
-    }
-    if (this->threadsList.empty()) {
-        this->toStop = false;
-    }
+    this->toStop = true;
 }

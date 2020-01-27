@@ -7,23 +7,35 @@
 #include "MyClientHandler.h"
 #include <vector>
 #include <string>
-#include "pthread.h"
 
-MyClientHandler::MyClientHandler(Solver<Matrix*,string >* solver) {
+/**
+ * Constructor to the class, initializing with solver to use and the cache manager.
+ * @param solver the solver.
+ */
+MyClientHandler::MyClientHandler(Solver<Matrix *, string> *solver) {
     this->solver = solver;
+    fstream file("CacheOfMyClientHandler.txt", ios::in | ios::binary);
     this->cacheManager = new FileCacheManager(5);
+
 }
 
+/**
+ * Reading from the client line by line of the matrix and the problem, creating a matrix and
+ * solving the problem (a trail from the start point to the goal point). sending to the client the solution.
+ * @param client_socket the client socket.
+ */
 void MyClientHandler::handleClient(int client_socket) {
+    string partOfSol;
     int valread;
     Matrix *matrix = new Matrix();
     char buffer[1024] = {0};
     string solution;
     vector<string> lines;
     valread = read(client_socket, buffer, 1024);
-    while(strstr(buffer, "end") == nullptr) {
+    //reading until the end
+    while (strstr(buffer, "end") == nullptr) {
         lines.push_back(buffer);
-                valread = read(client_socket, buffer, 1024);
+        valread = read(client_socket, buffer, 1024);
     }
     lines.push_back("end\r\n");
     matrix->BuildMatrix(lines);

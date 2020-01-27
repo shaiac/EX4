@@ -57,8 +57,10 @@ public:
 
 
         }
-        cout << "Astar Nodes:" << endl;
-        cout << nodes << endl;
+        cout<< "ASTAR Nodes: ";
+        cout<< nodes;
+        cout<<" ASTAR Trial:";
+        cout<<check->getTrailCost()<<endl;
         return this->BuildPath(check);
     }
 };

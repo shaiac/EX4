@@ -19,35 +19,38 @@ template<typename T>
 class BreadthFirstSearch : public DSearcher<T> {
 public:
     vector<State<T> *> Search(Searchable<T> *searchable) {
+        int nodes = 0;
         list<State<T> *> search_in_past;
         queue<State<T> *> to_search;
         State<T> *check;
         to_search.push(searchable->getInitialState());
-        int nodes = 0;
-        while (!to_search.empty()) {
+        search_in_past.push_front(check);
+        while (to_search.size() > 0) {
             check = to_search.front();
             to_search.pop();
             nodes++;
-            if (this->IsInList(search_in_past, check)) {
-                continue;
-            }
-            search_in_past.push_back(check);
             if (searchable->isGoalState(check)) {
                 break;
             }
             vector<State<T> *> adj = searchable->GetAllPossibleStates(check);
             for (auto adj_itr = adj.begin(); adj_itr != adj.end(); adj_itr++) {
                 State<T> *neigh = *adj_itr;
+                if (this->IsInList(search_in_past, neigh)) {
+                    continue;
+                }
                 if (neigh->GetCost() < 0) {
                     continue;
                 }
                 neigh->SetCameFrom(check);
                 neigh->setTrailCost(check->getTrailCost() + neigh->GetCost());
                 to_search.push(neigh);
+                search_in_past.push_front(neigh);
             }
         }
-        cout << "BFS Nodes:" << endl;
-        cout << nodes << endl;
+        cout << "BFS Nodes:";
+        cout << nodes;
+        cout<<" BFS Trial:";
+        cout<<check->getTrailCost()<<endl;
         return this->BuildPath(check);
     }
 };

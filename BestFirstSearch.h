@@ -27,9 +27,7 @@ public:
             nodes++;
             search_in_past.insert(check);
             if (searchable->isGoalState(check)) {
-                cout << "bestFS Nodes:" << endl;
-                cout << nodes << endl;
-                return this->BuildPath(check);;
+                break;
             }
             neighbors = searchable->GetAllPossibleStates(check);
             for (auto it = neighbors.begin(); it != neighbors.end(); it++) {
@@ -51,6 +49,10 @@ public:
                 }
             }
         }
+        cout<< "BESTFS Nodes:";
+        cout<< nodes;
+        cout<<" BESTFS Trial:";
+        cout<<check->getTrailCost()<<endl;
         return this->BuildPath(check);
     }
 };

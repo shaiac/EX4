@@ -15,12 +15,12 @@ struct ClientData {
 };
 
 class MyParallelServer: public server_side::Server {
-    list<pthread_t> threadsList;
     bool toStop = false;
 public:
     void start(int socketfd, sockaddr_in address,  ClientHandler *clientH);
     void open(int port, ClientHandler *clientH);
     void stop();
+    void clientHandle(ClientHandler *clientH, int client_socket);
 };
 
 

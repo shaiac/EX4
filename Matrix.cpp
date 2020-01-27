@@ -9,6 +9,11 @@ Matrix::Matrix() {
 
 }
 
+/**
+ * Getting a string and splitting him to a vector of string by ','.
+ * @param s the string that we want to split.
+ * @return the vector.
+ */
 vector<string> split(string s) {
     vector<string> values;
     string str = "";
@@ -27,12 +32,23 @@ vector<string> split(string s) {
     return values;
 }
 
+/**
+ * popping front element from vector.
+ * @tparam T type of the object
+ * @param vec the vector.
+ */
 template<typename T>
 void pop_front(std::vector<T> &vec) {
     assert(!vec.empty());
     vec.erase(vec.begin());
 }
 
+/**
+ * Getting a vector of strings and change him to be vector of states*.
+ * @param line_str the vector of the strings.
+ * @param x the x of point of the state.
+ * @return the vector as state*.
+ */
 vector<State<Point *> *> MakeVectorAsState(vector<string> line_str, double x) {
     vector<State<Point *> *> line_State;
     double i = 0;
@@ -47,24 +63,41 @@ vector<State<Point *> *> MakeVectorAsState(vector<string> line_str, double x) {
     return line_State;
 }
 
+/**
+ * Setting from the start and end points the start and goal states.
+ * @param start the start point.
+ * @param goal the goal point.
+ * @param startCost the cost of the start point.
+ */
 void Matrix::setStartGoal(Point *start, Point *goal, double startCost) {
     this->startState = new State<Point *>(start, startCost);
     this->goalState = new State<Point *>(goal, 0);
 }
 
+/**
+ * Creating a string of the matrix (the matrix is vectors of vectors of states*).
+ * @return string of the matrix.
+ */
 string Matrix::matrixToString() {
     string matrixString = "";
-    for(auto itr = this->Tmatrix.begin(); itr != this->Tmatrix.end(); itr++) {
+    for (auto itr = this->Tmatrix.begin(); itr != this->Tmatrix.end(); itr++) {
         vector<State<Point *> *> line = *itr;
-        for(auto it = line.begin(); it != line.end(); it++){
-            State<Point *> * state = *it;
-            matrixString += to_string(state->GetCost());
+        for (auto it = line.begin(); it != line.end(); it++) {
+            State<Point *> *state = *it;
+            matrixString += to_string((int) state->GetCost());
             matrixString += ",";
         }
         matrixString += "\n";
     }
+    return matrixString;
 }
 
+/**
+ * getting vector of strings, each string is a line of the matrix from that data
+ * creating the matrix vectors of vectors of states*. the 3 last lines are: the first one is the
+ * start point, the second is the the goal state and the last line "end" indicate that the matrix finished.
+ * @param lines The vector.
+ */
 void Matrix::BuildMatrix(vector<string> lines) {
     int i;
     string *splitLine;
@@ -77,6 +110,7 @@ void Matrix::BuildMatrix(vector<string> lines) {
         string tmp = *(++it);
         it--;
         it--;
+        //if the line is end we got to the end of the matrix
         if (tmp.find("end") != string::npos) {
             s_e = true;
         }
@@ -99,6 +133,7 @@ void Matrix::BuildMatrix(vector<string> lines) {
             break;
         }
     }
+    //setting the start and goal states.
     this->Size = size;
     Point *start = start_end.front();
     pop_front(start_end);
@@ -109,17 +144,31 @@ void Matrix::BuildMatrix(vector<string> lines) {
 
 }
 
+/**
+ * @return The start state.
+ */
 State<Point *> *Matrix::getInitialState() {
     this->startState->setTrailCost(this->startState->GetCost());
     return this->startState;
 }
 
+/**
+ * Checking if a state is the goal state.
+ * @param currentState the state that we want to check if goal.
+ * @return true if the goal state, false otherwise.
+ */
 bool Matrix::isGoalState(State<Point *> *currentState) {
     if (currentState->getState()->isEqual(*this->goalState->getState())) {
         return true;
     }
 }
 
+/**
+ * For a state, checking who are his neighbors that are all the states that we can move to them
+ * if he is a neighbor push him to the possible states vector.
+ * @param state the state that we search the neighbors for him.
+ * @return vector of all the neighbors.
+ */
 vector<State<Point *> *> Matrix::GetAllPossibleStates(State<Point *> *state) {
     Point *point = state->getState();
     double x = point->getX();

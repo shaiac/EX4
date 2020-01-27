@@ -8,7 +8,11 @@
 #include "Searcher.h"
 #include "Solver.h"
 #include "DSearcher.h"
-
+/**
+ * A class that connect between the solver and the searcher.
+ * @tparam P The type of the problem.
+ * @tparam T The type that we give to the searcher.
+ */
 template<typename P, typename T>
 class OA : public Solver<P,string> {
 protected:
@@ -17,7 +21,11 @@ public:
     OA(DSearcher<T>* searcher) {
         this->searcher = searcher;
     }
-
+    /**
+     * solving the problem and creating a matching string for the solution to give back to the client.
+     * @param problem the problem.
+     * @return string the solution.
+     */
     string solve(P problem) {
         string trailCost;
         vector<State<T>*> solution = this->searcher->Search(problem);

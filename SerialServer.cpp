@@ -9,7 +9,12 @@
 // Created by shaiac on 13/01/2020.
 //
 
-
+/**
+ * Waiting to accept clients, there is a timeout of 60 sec if there is no clients close the socket.
+ * @param socketfd the socket that we opened.
+ * @param address the address.
+ * @param clientH which client handle to use.
+ */
 void MySerialServer:: start(int socketfd, sockaddr_in address, ClientHandler *clientH) {
     int client_socket;
     timeval timeout;
@@ -33,6 +38,11 @@ void MySerialServer:: start(int socketfd, sockaddr_in address, ClientHandler *cl
     close(socketfd);
 }
 
+/**
+ * opening the server for accepting clients.
+ * @param port the port to listen.
+ * @param clientH which client handle to use.
+ */
 void MySerialServer:: open(int port, ClientHandler *clientH) {
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
@@ -51,11 +61,13 @@ void MySerialServer:: open(int port, ClientHandler *clientH) {
         cerr << "Error, during the listening command" << endl;
         exit(-3);
     }
-    //this->start(socketfd, address, clientH);
     thread start([this, socketfd, address, clientH] { this->start(socketfd, address, clientH); });
     start.join();
 }
 
+/**
+ * For the main thread to call, say to stop accepting clients.
+ */
 void MySerialServer::stop() {
     this->toStop = true;
 }

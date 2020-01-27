@@ -15,8 +15,12 @@ using namespace std;
 #include <iostream>
 #include <functional>
 
+/**
+ * A file Cache manager that in charge of saving solutions in files.
+ */
 class FileCacheManager : public CacheManager {
 protected:
+    //the hash function.
     hash<string> hashFunc;
     unordered_map<string, pair<string , list<string>::iterator>> cache;
     list<string> lruKeys;

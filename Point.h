@@ -6,7 +6,9 @@
 #define EX4_POINT_H
 using namespace std;
 #include <string>
-
+/**
+ * A point class.
+ */
 class Point {
 protected:
     double x;

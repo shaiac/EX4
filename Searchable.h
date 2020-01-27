@@ -9,7 +9,10 @@
 
 #include "State.h"
 #include <vector>
-
+/**
+ * Interface of the searchables.
+ * @tparam T type of an object.
+ */
 template<typename T>
 class Searchable {
 public:

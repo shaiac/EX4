@@ -13,6 +13,11 @@ MyTestClientHandler::MyTestClientHandler() {
     this->cacheManager = new FileCacheManager(5);
 }
 
+/**
+ * getting a string from the client that is the problem, reverse him with the solver
+ * and sending to the client the solution (reversed string).
+ * @param client_socket the client socket to read from.
+ */
 void MyTestClientHandler::handleClient(int client_socket) {
     int valread;
     char buffer[1024] = {0};
