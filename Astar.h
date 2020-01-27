@@ -54,8 +54,6 @@ public:
                     }
                 }
             }
-
-
         }
         cout<< "ASTAR Nodes: ";
         cout<< nodes;
